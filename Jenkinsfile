@@ -13,7 +13,7 @@ pipeline{
         stage('Build app image'){
             steps{
                 script{
-                    sh 'docker build -t myDockerizedApp .'
+                    sh 'docker build -t my-dockerized-app .'
 
                 }
 
