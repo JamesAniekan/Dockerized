@@ -13,10 +13,19 @@ pipeline{
         stage('Build app image'){
             steps{
                 script{
-                    sh 'docker build -t my-dockerized-app .'
+                    sh 'docker build -t anijames/my-dockerized-app:latest .'
 
                 }
-
+            }
+        }
+        stage('Push to dockerHub'){
+            steps{
+                script{
+                    withCredentials([string(credentialsId: 'dockerhubpass', variable: 'dockerhubpass')]) {
+                        sh 'docker login -u anijames -p ${dockerhubpass}'
+                    }
+                    sh 'docker push anijames/my-dockerized-app:latest'
+                }
             }
         }
     }
