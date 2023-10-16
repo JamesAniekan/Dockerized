@@ -31,8 +31,8 @@ pipeline{
         stage('Pull and run image on EC2'){
              steps{
                script{
-                    def pullImage = 'docker pull my-dockerized-app:latest'
-                    def runImage = 'docker run -p 8081:8080 my-dockerized-app:latest'
+                    def pullImage = 'docker pull anijames/my-dockerized-app:latest'
+                    def runImage = 'docker run -p 8081:8080 anijames/my-dockerized-app:latest'
                     sshagent(['docker-key']){
                         sh "ssh -o StrictHostKeyChecking=no ubuntu@16.171.149.102 ${pullImage}"
                         sh "ssh -o StrictHostKeyChecking=no ubuntu@16.171.149.102 ${runImage}"
