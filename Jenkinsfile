@@ -2,9 +2,10 @@ pipeline{
     agent any
     tools{
         maven '3.9.4'
-        jdk 'java-11'
     }
-
+    environment{
+        JAVA_HOME = tool name: 'java-11', type: 'jdk'
+    }
     stages{
         stage('Checkout and build jar'){
             steps{
