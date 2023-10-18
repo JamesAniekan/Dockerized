@@ -27,12 +27,6 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-jar-plugin -->
-		<dependency>
-			<groupId>org.apache.maven.plugins</groupId>
-			<artifactId>maven-jar-plugin</artifactId>
-			<version>3.3.0</version>
-		</dependency>
 
 	</dependencies>
 
@@ -41,6 +35,15 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version> <!-- Use the version appropriate for your project -->
+				<configuration>
+					<source>11</source> <!-- Set your desired source Java version -->
+					<target>11</target> <!-- Set your desired target Java version -->
+				</configuration>
 			</plugin>
 
 		</plugins>
