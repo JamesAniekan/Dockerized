@@ -2,7 +2,9 @@ pipeline{
     agent any
     tools{
         maven '3.9.4'
+        jdk 'java-11'
     }
+
     stages{
         stage('Checkout and build jar'){
             steps{
